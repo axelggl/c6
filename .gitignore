@@ -1,0 +1,15 @@
+bin/
+bin/*
+obj/
+obj/*
+echo ".DS_Store" >> ~/.gitignoreglobal
+echo "..DS_Store" >> ~/.gitignore_global
+echo "/.DS_Store" >> ~/.gitignoreglobal
+echo "/..DS_Store" >> ~/.gitignore_global
+echo "node_modules/" >> ~/.gitignore_global
+echo ".DS_Store" >> ~/.gitignore_global
+echo ".dll" >> ~/.gitignore_global
+echo ".exe" >> ~/.gitignore_global
+echo ".war" >> ~/.gitignore_global
+echo "*.jar" >> ~/.gitignore_global
+git config --global core.excludesfile ~/.gitignore_global
