@@ -4,7 +4,8 @@ namespace CSharpDiscovery.Quest01
     {
         public static string ConcatEverything(params string[] str)
         {
-           // Your code
+           string concatE = string.Join("", str);
+           return concatE;
         }
     }
 }
