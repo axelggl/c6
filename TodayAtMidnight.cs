@@ -6,7 +6,7 @@ namespace CSharpDiscovery.Quest02
     {
         public static DateTime TodayAtMidnight()
         {
-            DateTime date = DateTime.UtcNow;
+            DateTime date = DateTime.Today;
             return date;
         }
     }
