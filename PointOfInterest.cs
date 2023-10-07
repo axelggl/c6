@@ -34,5 +34,28 @@ namespace CSharpDiscovery.Quest03
         {
             return $"{Name} (Lat={Latitude}, Long={Longitude})";
         }
+
+        public int GetDistance(PointOfInterest other)
+        {
+            const double EarthRadiusKm = 6371.0;
+
+            double lat1 = Latitude * (Math.PI / 180.0);
+            double lon1 = Longitude * (Math.PI / 180.0);
+            double lat2 = other.Latitude * (Math.PI / 180.0);
+            double lon2 = other.Longitude * (Math.PI / 180.0);
+
+            double dlat = lat2 - lat1;
+            double dlon = lon2 - lon1;
+
+            double a = Math.Pow(Math.Sin(dlat / 2), 2) + Math.Cos(lat1) * Math.Cos(lat2) * Math.Pow(Math.Sin(dlon / 2), 2);
+            double c = 2 * Math.Atan2(Math.Sqrt(a), Math.Sqrt(1 - a));
+
+            return (int)Math.Round(EarthRadiusKm * c);
+        }
+
+        public static int GetDistance(PointOfInterest p1, PointOfInterest p2)
+        {
+            return p1.GetDistance(p2);
+        }
     }
 }
