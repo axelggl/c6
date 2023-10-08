@@ -35,7 +35,7 @@ namespace CSharpDiscovery.Quest04
 
         public override void Brake(int BrakePower)
         {
-            if (CurrentSpeed >= 0)
+            if (CurrentSpeed - BrakePower >= 0)
             {
                 CurrentSpeed -= BrakePower;
             }
